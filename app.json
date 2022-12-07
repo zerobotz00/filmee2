@@ -1,8 +1,8 @@
 {
-    "name": "ᎯℕUℛᎯᎶ",
-    "description": "Clone Of ᎯℕUℛᎯᎶ & More Features Added",
+    "name": "𝙵𝙸𝙻𝙼𝙴𝙴𝙷𝚄𝙱⭕️ᴄᴏᴍᴍᴜɴɪᴛʏ Bot",
+    "description": "Clone Of 𝙵𝙸𝙻𝙼𝙴𝙴𝙷𝚄𝙱⭕️ᴄᴏᴍᴍᴜɴɪᴛʏ & More Features Added",
     "stack": "container",
-    "logo": "https://telegra.ph/file/9ee1253e36b37a1665ce2.jpg",
+    "logo": "https://telegra.ph/file/dfa57eb8b8675bb438942.jpg",
     "keywords": [
       "telegram",
       "auto-filter",
@@ -16,8 +16,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/AM-ROBOTS/AM-ROBOTS",
-    "repository": "https://github.com/AM-ROBOTS/AM-ROBOTS",
+    "website": "https://github.com/zerobotz00/filmee2",
+    "repository": "https://github.com/zerobotz00/filmee2",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
