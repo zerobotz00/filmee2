@@ -11,40 +11,58 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', "")
+SESSION = environ.get('BQAi9kqjmqjkkBH-ED0HlKhAnM_Co2q-cBJmrla3n5MwNZ5XdmqKrksbdbmdOnAi5k7JIhi4aPmOCisxRnuNq3xRsBj5qSTIAtohuOXCFgZtQG4kqROkNu5ogtzltEi3RcHsqhicv-ZAoFtaYRZQR3CYh9v2g5uGtWwMCkBJBxNxFKYVGtV8FUeZr6VxTCXYZ74prPbIsvu34jfcHrw_PtrC45-8fJWAGX4sOO-ODnFA23ntKRGpekaxM5X2jvUIGKv0WHnNdf1w-QtoB6bs6_3_eebgCBaL5GIS3Vz-LiZtdpPg3EKNvPfFsBovO3vimZ--h1nYm4TtzOGMgecfNZ-kAAAAAU_nSgsA', 'Media_search')
+API_ID = int(environ.get('17684842', ''))
+API_HASH = environ.get('33079811ffe222b1c7f6688b86903bce', '')
+BOT_TOKEN = environ.get('5935777747:AAFjUebsQKf8Cmk_sWP92yRsSo2qfjeYwAI', "")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://telegra.ph/file/b806ad314d0c415571bde.jpg')).split()
+PICS = (environ.get('PICS', 'https://telegra.ph/file/5e5d673284df58e7ff7a8.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '2001653136').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '2001653136').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5635525131').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001708323994').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5635525131').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL', '')
+auth_channel = environ.get('AUTH_CHANNEL', '-1001708323994')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://filmee:Spasan0088@cluster0.ynu7cn2.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'greymatters_bots_discussion')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001863366550'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '@movie_link_lk')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "False")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), False)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [GreyMatter's Bot](https://t.me/greymatter_bots)</b>")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [GreyMatter's Bot](https://t.me/greymatter_bots)</b>")
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "🧿 ᴛɪᴛᴛʟᴇ :  {title} \n🌟 ʀᴀᴛɪɴɢ : {rating} \n🎭 ɢᴇɴʀᴇ : {genres} \n📆 ʀᴇʟᴇᴀsᴇ : {year} \n⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime} \n🎙️ʟᴀɴɢᴜᴀɢᴇ : {languages} \n🔖 sʜᴏʀᴛ : {plot} \n★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @GreyMatter_Bots")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<i><b>🏷 Title </b></i> : <i><b><a href={url}>{title}</a></b></i>\n
+<i><b>📆 Release Date</b></i> : <i><b>{release_date}</b></i>\n
+
+<i><b>📧 Votes</b></i> : <i><b>{votes}</b></i>\n
+<i><b>⏰ RunTime</b></i> : <i><b>{runtime} Minutes</b></i>\n
+<i><b>⭐ Rating</b></i> : <i><b><a href={url}/ratings>{rating}/10</a></b></i>\n
+<i><b>🎭 Genres</b></i> : <i><b>{genres}</b></i>\n
+<i><b>🎬 Director</b></i> : <i><b>{director}</b></i>\n
+<i><b>📝 Writer</b></i> : <i><b>{writer}</b></i>\n
+<i><b>🔊 Languages</b></i> : <i><b>#{languages}</b></i>\n\n\n\n
+
+
+Powerd by :  @movie_link_lk")
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "FILE : <code>{file_name}</code>\n 
+Size : <i>{file_size}</i>\n
+CAPTION: {file_caption}\n\n
+
+
+
+Powerd By : @movie_link_lk)</b>")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", " 🏷ᴛɪᴛᴛʟᴇ :  {title} \n🌟 ʀᴀᴛɪɴɢ : {rating} \n🎭 ɢᴇɴʀᴇ : {genres} \n📆 ʀᴇʟᴇᴀsᴇ : {year} \n⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime} \n🎙️ʟᴀɴɢᴜᴀɢᴇ : {languages} \n🔖 sʜᴏʀᴛ : {plot} \n★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @GreyMatter_Bots")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "False"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
@@ -79,10 +97,10 @@ if SELF_DELETE == "True":
 
     # Download Tutorial Button #
 DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
-DOWNLOAD_TEXT_URL = "https://t.me/How_to_Download_From_Search_Bot/2"
+DOWNLOAD_TEXT_URL = "http://t.me/filmeefilterbot"
 
    # Custom Caption Under Button #
-CAPTION_BUTTON = "Subscribe"
-CAPTION_BUTTON_URL = "https://youtube.com/c/GreyMattersBot"
+CAPTION_BUTTON = "Join Main Group"
+CAPTION_BUTTON_URL = "https://t.me/movie_link_lk"
 
    # Auto Delete For Bot Sending Files #
